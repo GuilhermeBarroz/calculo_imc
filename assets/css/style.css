@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 :root {
-  --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(9, 48, 56);
+  --primary-color: #00C71B;
+  --primary-color-darker: #257A30;
 }
 
 * {
@@ -12,7 +12,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--primary-color);
+  background-image: linear-gradient(to top, var(--primary-color), var(--primary-color-darker));
   font-family: 'Open sans', sans-serif;
   font-size: 1.3em;
   line-height: 1.5em;
@@ -58,7 +58,7 @@ form input:focus {
 
 form button {
   border: none;
-  background: var(--primary-color);
+  background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color-darker));
   color: #fff;
   font-size: 18px;
   font-weight: 700;
