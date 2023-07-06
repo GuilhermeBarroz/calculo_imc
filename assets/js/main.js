@@ -1,37 +1,31 @@
-function calcularImc(){
-    
-    const form = document.querySelector('.form');
-    const resposta = document.querySelector('.resposta');
+// 1 - Capturar evento de submit do form
 
-    function dadosIMC(event){
+const form = document.querySelector('#form');
 
-        event.preventDefault();
+form.addEventListener('submit', function(event){
+    event.preventDefault();
 
-        const peso = Number(form.getElementById('peso'));
-         const altura = Number(form.getElementById('altura') / 100);
-        const resultado = (peso / Math.pow(altura, 2)).toFixed(2) ;
+    const inputPeso = event.target.querySelector('#peso');  //.target vai informar o elemento que está recebendo o evento
+    const inputAltura = event.target.querySelector('#altura');
 
-        if(resultado < 18.5){
-            return resultado;
-        }else if(resultado >= 18.5 && resultado < 25){
-            return resultado;
-        }else if(resultado >= 25 && resultado < 30){
-            return resultado;
-        }else if(resultado >= 30 && resultado < 35){
-            return resultado;
-        }else if(resultado >= 35 && resultado < 40){
-            return resultado;
-        }else if(resultado > 40 && resultado < 70){
-            return resultado;
-        } else{
-            // alert(`Seu IMC de ${resultado} não é de um humano`);
-        }
-    }  
-    form.addEventListener('submit', dadosIMC);
+    const peso = Number(inputPeso.value);
+    const altura = Number(inputAltura.value);
+
+    if(!peso){
+        setResultado() 
+    }
+
+    console.log(peso, altura)
+    setResultado();
+});
+
+function criarParagrafo(){
+    const paragrafo = document.createElement('p');
+    return paragrafo;
 }
 
-calcularImc();  
-
-    
-
-
+function setResultado(msg){
+    const resultado = document.querySelector('#resultado')
+    resultado.innerHTML = '';
+    const paragrafo = criarParagrafo();
+} 
